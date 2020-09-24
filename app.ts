@@ -1,6 +1,6 @@
 
 
-class Man {
+class User {
     //Name: String;
     //Age: number;
 
@@ -17,25 +17,8 @@ class Man {
 };
 
 
-const Sergey: Man = new Man('Tom', 10,50);
-const Aleksandr: Man = new Man('Alex', 20,50);
-const Mihail: Man = new Man('Mihail', 30,50)
+const el = document.getElementById('content'),
+names = ["zxc","ASD","qwe","dfg"],
+users.names.map(name => new User(name,10,50))
+el.innerHTML = users.map(user => user.toString).reduce((prev, cur) => prev + cur,'  ')
 
-let a: Man[] = [];
-
-a.push(Sergey);
-a.push(Aleksandr)
-a.push(Mihail);
-let z = document.createElement("div")
-const el = document.getElementById('content');
-console.log(el);
-console.log(`${a[1]}`.toString());
-//el.innerText = `${a[1]}`;
-let div;
-for(let i: number = 0; i <= a.length - 1; i++){
-     div = document.createElement('div');
-
-    div.innerHTML = "<div>name ${a[i].toSting()}</div>";
-    //console.log(el,element);
-}
- 
