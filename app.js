@@ -23,31 +23,34 @@ var but1 = document.createElement('input');
 but1.setAttribute("type", "radio");
 but1.setAttribute("id", "btn1");
 but1.setAttribute("name", "rad");
+but1.addEventListener("change", handlerBtn1);
 //but1.setAttribute("checked", "");
 document.body.querySelector("form").appendChild(but1);
 var but2 = document.createElement('input');
 but2.setAttribute("type", "radio");
 but2.setAttribute("value", "zxc");
 but2.setAttribute("name", "rad");
-but2.addEventListener("change", handlerBtn);
+but2.addEventListener("change", handlerBtn2);
 document.body.querySelector("form").appendChild(but2);
-function handlerBtn(e) {
-    if (document.getElementById("btn1").checked = true) {
+function handlerBtn1(e) {
+    if (document.getElementById("inpVal").value != "") {
         var filtredList = users.filter(function (user) { return user.age > document.getElementById("inpVal").value; });
         var reduceList = filtredList.map(function (user) { return user.toString(); })
             .reduce(function (prev, cur) { return prev + cur; }, '');
         console.log(reduceList);
         el.innerHTML = "" + reduceList;
-        console.log(document.getElementById("inpVal").value);
+        //console.log(document.getElementById("inpVal").value)
         //document.body.appendChild(upul);
     }
-    else {
+}
+function handlerBtn2(e) {
+    if (document.getElementById("inpVal").value != "") {
         var filtredList = users.filter(function (user) { return user.age < document.getElementById("inpVal").value; });
         var reduceList = filtredList.map(function (user) { return user.toString(); })
             .reduce(function (prev, cur) { return prev + cur; }, '');
         console.log(reduceList);
         el.innerHTML = "" + reduceList;
-        console.log(document.getElementById("inpVal").value);
+        //console.log(document.getElementById("inpVal").value)
         //document.body.appendChild(upul);
     }
 }
